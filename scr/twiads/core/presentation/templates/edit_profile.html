@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Edit Profile</h1>
+<form method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}
+    Avatar: {{ form.avatar }}<br><br>
+    Username: {{ form.username }}<br><br>
+    First name: {{ form.first_name }}<br><br>
+    Last name: {{ form.last_name}}<br><br>
+    Email: {{ form.email }}<br><br>
+    Birth date: {{ form.birth_date }}<br><br>
+    Country: {{ form.country }}<br><br>
+    <button type="submit">Save</button>
+</form>
+{% endblock %}

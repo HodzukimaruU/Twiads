@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "twiads"
+version = "0.1.0"
+description = "Social network like Twitter and Threads."
+authors = ["Maksim Malhinau"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11.4"
+django = "4.2.4"
+python-dotenv = "1.0.0"
+psycopg2 = "^2.9.6"
+pillow = "^10.0.0"
+dacite = "^1.8.1"
+logging = "^0.4.9.6"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.3.3"
+deptry = "0.11.0"
+pylint = "2.17.4"
+
+[tool.mypy]
+mypy_path = "src/twiads"
+disallow_untyped_defs = true
+check_untyped_defs = true
+strict_optional = true
+no_implicit_optional = true
+warn_return_any = true
+show_error_codes = true
+warn_unused_ignores = true
+
+[tool.black]
+target-version = ["py311"]
+line-length = 150
+include_trailing_comma = true
+
+[tool.isort]
+profile = "black"
+line_length = 150
+include_trailing_comma = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
